@@ -23,7 +23,7 @@
                      <publicationStmt>
                          <authority/>
                          <availability><p><xsl:value-of select="$metaFile/office:document-meta/office:meta/meta:user-defined[@meta:name='Licence']"/></p></availability>
-                         <date><xsl:value-of select="$metaFile/office:document-meta/office:meta/meta:user-defined[@meta:name='Date de publication']"/></date>
+                         <date><xsl:value-of select="$metaFile/office:document-meta/office:meta/meta:user-defined[@meta:name='Date de publication' or @meta:name='Date de la publication']"/></date>
                        
                      </publicationStmt>
                      <sourceDesc>
