@@ -14,7 +14,6 @@ import module namespace templates="http://exist-db.org/xquery/templates";
 import module namespace config="http://localhost:8080/exist/apps/projet/config" at "config.xqm";
 import module namespace app="http://localhost:8080/exist/apps/projet/templates" at "app.xql";
 import module namespace rch="http://localhost:8080/exist/apps/projet/recherche" at "recherche.xql";
-import module namespace vis="http://localhost:8080/exist/apps/projet/visualisation" at "visualisation.xql";
 
 
 
