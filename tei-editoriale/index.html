@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 0px;
+}
+
+.grid-container &gt; div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+body {
+    height:750;
+    width:100%;
+    margin:0;
+}
+.h_iframe iframe {
+    width:100%;
+    height:100%;
+}
+.h_iframe {
+    height: 100%;
+    width:100%;
+}
+</style>
+</head>
+<body>
+
+    <div class="page-header">
+            <div class="alert alert-success">
+            <div>
+            <p>Ce projet contient trois interfaces : la <b>
+                            <a href="./index.html">présentation</a>
+                        </b> du projet(la page actuelle) qui présente les projets et les étapes que j’ai mis en œuvre, ainsi que une navigation sur le site notamment le fonctionnement pour la recherche dans les documents et enfin des difficultés rencontrés lors du projet, la <b>
+                            <a href="./recherche.html"> recherche</a>
+                        </b> d’informations dans les documents(page Recherche) qui nous permet de chercher un mot/les mots dans les documents, et finalement pour la <b>
+                            <a href="./visualisation.html"> visualisation</a>
+                        </b> des documents mis en page(page Visualisation).</p>
+            </div>
+            </div>
+        </div>
+            <div class="row">
+            <div class="col-md-3 justify-content-around">
+            <!--<div class="vis:present-docs"/>-->
+            <li>
+                                <a href="presentation.xml" target="ptframe">Présentation du projet</a>
+                            </li>
+            <li>
+                                <a href="recherche.xml" target="ptframe">Fonctionnement de la page Recherche</a>
+                            </li>
+            <li>
+                                <a href="difficulte.xml" target="ptframe">Difficultés rencontrés</a>
+                            </li>
+            </div>
+            <div class="col-md-9 justify-content-around">
+            <iframe src="presentation.xml" style="border:none;" name="ptframe" title="texter" width="100%" height="500"/>
+            </div>
+            </div>
+            
+            
+<!--            <div class="grid-container" id="grid">-->
+<!--            <div>-->
+<!--                    <li>-->
+<!--                        <a href="presentation.xml" target="presentation">Présentation du projet</a>-->
+<!--                    </li>-->
+<!--                </div>-->
+<!--            <div>-->
+<!--                    <li>-->
+<!--                        <a href="recherche.xml" target="presentation">Fonctionnement de la page Recherche</a>-->
+<!--                    </li>-->
+<!--                </div>-->
+<!--            <div>-->
+<!--                    <li>-->
+<!--                        <a href="difficulte.xml" target="presentation">Difficultés rencontrés</a>-->
+<!--                    </li>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        -->
+<!--            -->
+<!--            </div>-->
+<!--            <iframe name="presentation" src="presentation.xml" style="border:none;" title="present" width="100%" height="900"/>-->
+            
+            
+            
+            <br/>
+            <br/>
+            <br/>
+    <li>Ce site est créé par Mei GAN IM Inalco</li>
+</body>
+</div>

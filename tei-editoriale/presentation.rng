@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="root">
+            <ref name="title"/>
+            <ref name="contents"/>
+        </element>
+    </start>
+    <define name="title">
+        <oneOrMore>
+            <element name="title">
+                <text/>
+            </element>
+        </oneOrMore>
+    </define>
+    <define name="contents">
+        <element name="contents">
+            <zeroOrMore>
+                <element name="objective">
+                    <text/>
+                </element>
+            </zeroOrMore>
+            <ref name="division"/>
+<!--            <ref name="link"/>-->
+        </element>
+    </define>
+    <define name="division">
+        <oneOrMore>
+        <element name="div">
+            
+            <zeroOrMore>
+                <element name="h">
+                    <text/>
+                </element>
+            </zeroOrMore>
+            <zeroOrMore>
+                <ref name="link"/>
+            </zeroOrMore>
+            <zeroOrMore>
+                <element name="p">
+                    <text/>
+                </element>
+            </zeroOrMore>
+            <zeroOrMore>
+                <element name="code">
+                    <text/>
+                </element>
+            </zeroOrMore>
+            <zeroOrMore>
+                <element name="p">
+                    <text/>
+                </element>
+            </zeroOrMore>
+            <zeroOrMore>
+                <element name="image">
+                    <text/>
+                </element>
+            </zeroOrMore>
+            
+        </element>
+        </oneOrMore>
+    </define>
+    <define name="link">
+        <oneOrMore>
+        <element name="link">
+            <element name="l"> <text/>
+                </element>
+            <element name="name"> <text/>
+                </element>
+            
+        </element>
+        </oneOrMore>
+    </define>
+        
+</grammar>

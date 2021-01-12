@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="presentation.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="presentation.xsl"?>
+<root>
+	<title>Fonctionnement de la page Recherche</title>
+	<contents>
+		<div>
+		<p>Dans la page Recherche, vous pouvez rechercher les mots en plaine texte avec les documents que vous filtrez ou sans filtrer. En plus, vous pouvez également rechercher tous les informations concernant un fichier.</p>
+		<p>Pour la permière fonction, vous allez dans cette zone : </p>
+		<image>imgs/recherche1.jpg</image>
+			</div>
+        <div>
+		<p>Vous pouvez saisir la requête «laboureurs », par exemple, dans « Rechercher en plein texte » en cliquant le bouton « Submit » et il va chercher dans tous les documents. </p>
+		<image>imgs/recherche2.jpg</image>
+			</div>
+        <div>
+		<p>Vous obtenez les résultats ci-dessous qui affichent non seulement le texte mais aussi le nom de fichier :</p>
+		<image>imgs/recherche3.jpg</image>
+			</div>
+        <div>
+		<p>En plus, si vous voulez chercher un peu plus précise, vous pouvez aller dans « Séléctionner les différentes possibilités » qui vous permet de filtrer les possibilités avant d’effectuer une requête. </p>
+		<p>Par exemple, si on veut savoir les documents de l’écrivain Gustave Flaubert de l’année 1995 à 2004, on peut sélectionner l’auteur Gustave Flaubert et saisir la période de l’année. En cliquant le bouton « Submit» en bas, on peut trouver que le fichier sortie est Madame-Bovary.xml. </p>
+		<image>imgs/recherche5.jpg</image>
+			</div>
+        <div>
+		<p>Après avoir obtenu le fichier, on peut également effectuer une requête sur ce qu’on a filtré. Par exemple, on veut rechercher « Madame Bovary » dans ce fichier, et on le saisit dans la zone de texte et clique Submit. On va avoir les résultats ci-dessous, par défaut la nombre maximum de caractères à imprimer avant et après le match est 40 : </p>
+		<image>imgs/recherche6.jpg</image>
+			</div>
+        <div>
+		<h>Si vous voullez recommencer la recherche, cliquez le bouton « Annuler la recherche » en haut. </h>
+		<p>Pour la deuxième fonction, cela serve à rechercher tous les informations concernant un fichier en saisissant le nom du fichier, vous allez obtenir les méta données telles que le titre, le nom de fichier, la date de ressource, la date de publication, le lien vers le source, etc.</p>
+		<p>Par exemple, on peut obtenir ses méta-données en saissant le nom de fichier « Madame-Bovary.xml »</p>
+		<image>imgs/recherche7.jpg</image>
+			</div>
+        <div>
+		<h>Autres liens : </h>
+		<link>
+			<l>presentation.xml</l>
+			<name>Présentation du projet</name>
+		</link>
+		<link>
+			<l>difficulte.xml</l>
+			<name>Difficultés rencontrés</name>
+		</link>
+			</div>
+	</contents>
+</root>

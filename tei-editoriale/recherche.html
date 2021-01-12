@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
+<head>
+<script>
+<!--getTxt();-->
+function onLoad(){
+    
+    let authorName = sessionStorage.getItem('authorName');
+    let titireName = sessionStorage.getItem('titireName');
+    let yearStart = sessionStorage.getItem('yearStart');
+    let yearEnd = sessionStorage.getItem('yearEnd');
+    
+    if (authorName !== null){
+        document.getElementById('authors').value = authorName;
+    }
+    
+    if (titireName !== null){
+        document.getElementById('titre').value = titireName;
+    }
+    
+    if (yearStart !== ''){
+        document.getElementById('yearStart').value = yearStart;
+    }
+    
+    if (yearEnd !== ''){
+        document.getElementById('yearEnd').value = yearEnd;
+    }
+}
+
+function setName(){
+    let authorName = document.getElementById("authors").value;
+    let titireName = document.getElementById("titre").value;
+    let yearStart = document.getElementById("yearStart").value;
+    let yearEnd = document.getElementById("yearEnd").value;
+<!--    alert('y');-->
+    sessionStorage.setItem("authorName",authorName);
+    sessionStorage.setItem("titireName",titireName);
+    sessionStorage.setItem("yearStart",yearStart);
+    sessionStorage.setItem("yearEnd",yearEnd);
+}
+
+function annuler(){
+    sessionStorage.removeItem("authorName");
+    sessionStorage.removeItem("titireName");
+    sessionStorage.removeItem("yearStart");
+    sessionStorage.removeItem("yearEnd");
+}
+</script>
+
+</head>
+<body onload="onLoad()">
+<div class="row">
+<div class="col-md-8 justify-content-center">
+<h1>Recherche</h1>
+<a href="./recherche.html" class="button button1" onclick="annuler()">Annuler la recherche</a>
+<br/>
+
+<h2>Séléctionner les différentes possibilités</h2>
+<p>Si vous séléctionnez le titre de document, les autres possibilités ne seront pas pris en compte.</p>
+<form action="" id="requete-option">
+     <label for="titre">Sélection d'un titre</label>
+          <select name="optionTitre" id="titre">
+            <option value="tous">Tous</option>
+            <div class="rch:present-titres"/>
+            </select>
+     <br/>
+    <label for="author">Sélection d'un auteur</label>
+    <select name="optionAuteur" id="authors">
+        <option value="tous">Tous</option>
+        <div class="rch:present-author"/>
+      </select>
+      <br/>
+      <label for="year">Entrer l'année de la créaction des documents (ex:2020) de</label>
+                <input type="year" name="yearStart" id="yearStart"/>
+      <label for="year">à</label>
+                <input type="year" name="yearEnd" id="yearEnd"/>
+                <p>
+                            <b>( Par exemple : de 1995 à 2002 )</b>
+                        </p>
+      <h2>Rechercher en plein texte</h2>
+        <p>Effectuer une recherche dans une correspondance.</p>
+        <p>
+                            <b>Exemple de requête : </b>"voyage"</p>
+        <label for="queryMot">Entrer un requête :</label>
+        <input name="queryMot"/>
+                        <br/>
+        <label for="length">Nombre maximum de caractères à imprimer avant et après le match:</label>
+        <input name="length"/>(Par défaut : 40)
+        <br/>
+      <input type="submit" value="Submit" onclick="setName()"/>
+</form>
+<div class="rch:requete-mot-document"/>
+
+</div>
+
+<div class="col-md-4 justify-content-around">
+<h3>Trouver les métadonnées pour un document</h3>
+<form action="" id="requete-infos">
+        <label for="queryDoc">Entrer le nom du fichier (ex : Madame-Bovary.xml) : </label>
+        <input name="queryDoc"/>
+        <br/>
+        <input type="radio" id="case-sensitive" name="case" value="sensitive" checked="checked"/>
+        <label for="case">Sensible à la casse</label>
+        <input type="radio" id="case-insensitive" name="case" value="insensitive"/>
+        <label for="case">Insensible à la casse</label>
+        <br/>
+        <input type="submit" value="Submit"/>
+    </form>
+    <div class="rch:requete-infos"/>
+        
+</div>
+</div>
+</body>
+</div>
+
+</html>

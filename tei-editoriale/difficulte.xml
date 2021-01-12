@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="presentation.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="presentation.xsl"?>
+<root>
+	<title>Difficultés rencontrés</title>
+	<contents>
+		<div>
+		<h>Ce que j'ai trouvé difficile pour la première partie sont de changer les balises de police en même temps garder les contenus et d'utiliser un seul fichier XSL pour fonctionner avec tous ces deux fichiers XML (content.xml et meta.xml). </h>
+		<p>Ce que j'ai fait pour résoudre le premier problème est que j'ai fait convertir les polices entre la balise «hi» et copier-coller les contenue texte dans les pilices.  </p>
+		<image>imgs/difficulte1.jpg</image>
+		</div>
+        <div>
+		<p>En fin, j'ai réussi d'obtenir de bons résultats.</p>
+		<image>imgs/difficulte2.jpg</image>
+		</div>
+        <div>
+		<p>Et pour le deuxième problème, je les ai mis comme deux variables avant de commencer traiter : </p>
+		<image>imgs/difficulte3.jpg</image>
+		</div>
+        <div>
+		<h>Ce que j'ai trouvé difficile pour la deuxième partie est comment sauvegarder des variables après avoir rafraîchi une page pour l’interface Recherche pour que l'on puisse réutiliser pour une requête dans les documents sélectionnés.  </h>
+		<p>J’ai effectué des fonctions de JavaScript pour qu’il mémorise dynamiquement des variables telles que l’auteur, le tire et le période de l’année une fois la page est actualisée. </p>
+		<image>imgs/difficulte4.jpg</image>
+		</div>
+        <div>
+		<h>Autres liens : </h>
+		</div>
+        <div>
+		<link>
+			<l>presentation.xml</l>
+			<name>Présentation du projet</name>
+		</link>
+		<link>
+			<l>recherche.xml</l>
+			<name>Fonctionnement du Recherche</name>
+		</link>
+		</div>
+	</contents>
+</root>

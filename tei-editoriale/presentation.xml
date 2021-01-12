@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="presentation.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="presentation.xsl"?>
+<root>
+	<title>Présentation du projet</title>
+	<contents>
+		<objective>L’objectif de ce projet est de réaliser une chaîne de traitement pour la publication de documents en ligne. À partir de trois documents, nous allons proposer un site web pour présenter le contenu de ces documents et interagir avec. </objective>
+		<div>
+		<p>Ce travail contient deux étapes :</p>
+		<p>La première étape consistera à transformer les documents au format OpenDocument XML selon le standard de la TEI (Text Encoding Initiative). Pour cela, j’ai effectué un fichier XSLT pour les convertir. </p>
+		<p>Premièrement, puisque le format OpenDocument est une archive de plusieurs fichiers XML, j’ai donc changé l’extension du document .dot en l’extension .zip et je l’ai unzippé. Il y a plusieurs fichiers dedans, et les fichiers à utiliser pour ce travail sont content.xml, et meta.xml. </p>
+		<image>imgs/fichierOdt.jpg</image>
+		</div>
+        <div>
+		<p>Ensuite, j’ai effectué un fichier.xsl afin d’extraire les contenus du document et ses métadonnées. Donc, il me faut bien comprendre la structure des fichiers content.xml et meta.xml qui contiennent les contenus du document et ses métadonnées respectivement.
+		</p>
+		<p>En ce qui concernant les métadonnées, en observant le fichier meta.xml, j’observe les endroits et les balises à chercher pour ces informations comme ci-dessous : </p>
+		<image>imgs/tableau1.jpg</image>
+		</div>
+        <div>
+		<p>Après avoir trouvé ces balises, j’ai effectué un fichier.xsl afin d’extraire ces contenus. J’ai d’abord mis le nom du fichier comme une variable dans le fichier xsl. </p>
+		<code>&lt;xsl:param name="metaFile" select="document('meta.xml')"/&gt;</code>
+		<p>Ensuite, avant de mettre les balises, c’est obligé de mettre leurs noms d’espaces pour qu’il puisse accéder au fichier meta.xml et content.xml.</p>
+		<image>imgs/nomEspace.png</image>
+		</div>
+        <div>
+		<p>J’ai fait extraire ces informations un par un à l’aide de XPath, un langage de requête pour localiser une portion d'un document XML, et puis les mettre dans le format correspondant au format TEI. </p>
+		<image>imgs/xpath.png</image>
+		</div>
+        <div>
+		<p>Pour l’extraction du contenu de content.xml, j’observe que la structure de texte est simple, mais leurs structures ne sont pas pareilles. Voici une illustration des trois documents avec les noms des partie en couleur orange signifiant le niveau 1 et ceux qui en couleur bleu signifiant le niveau 2 : </p>
+		<image>imgs/structure.jpg</image>
+		</div>
+        <div>
+		<p>Pour les noms de partie de niveau 1, ils sont entre les balises &lt;text:h text:style-name="Heading_20_1" text:outline-level="1"&gt;, alors que les chapitres sont entre les balises &lt;text:h text:style-name="Heading_20_2" text:outline-level="2"&gt;.
+En revenche, il est possible qu’un document ne contient que des niveau 2 comme le document « Wuthering-Heights ».
+</p>
+
+		<p>La méthode que j’ai adoptée est de diviser la structure en deux situations individuelles : soit le document commence par une division de niveau 1 ; soit le document commencer par un division de niveau1.</p>
+		<p>Pour la première situation, elle commence par une division de niveau 1, j’ai noté son index en utilisant la fonction generate-id( ), puis j’ai regardé tous ses sœurs de niveau 2 suivantes dont l’index de sa sœur de niveau 1 précédente est bien l’index que j’ai noté. Sinon, ce serait des chapitres des autres parties. En fin, je les ai mis au format correspondant au TEI. </p>
+		<image>imgs/xpath2.png</image>
+		</div>
+        <div>
+		<p>Si c’est la deuxième situation, ce serait plus facile :  il me faut extraire tous ses sœurs chapitres et les mettre au bon format de TEI.</p>
+		<p>Pour tous les requêtes, vous pouvez regerder le fichier transformation.xsl.</p>
+		</div>
+        <div>
+		</div>
+        <div>
+		<p>Une fois la première étape est terminée, j’ai créé une base de données XML (eXist- db) et stocké les documents XML. À partir de celle-ci, j’ai réalisé ce site internet à l’aide de xquery et xslt. </p>
+		<p>Pour la deuxième partie, ce qui est le plus essentiel est la page de Recherche, pour plus informations, vous pouvez aller dans "Fonctionnement du Recherche".</p>
+		<p>Cette partie est d'objectif de trouver un mot/une chaîne dans des documents. Donc, mon algorithme est de générer d’abord une interface pour l’utilisateur à saisir/choisir et dès qu’il a fini à saisir /sélectionner, on mémorise ces valeurs et effectue des recherches. S’il ne sélectionne aucun documents, on va rechercher cette requête dans tous les documents. </p>
+		<p>J’ai utilisé principalement Xquery à l'aide des modules Lucene, kwic et functx pour trouver des informations correspondantes telles que la comparaison des noms des auteurs pour trouver le même auteur, ou filtre de la période de l’année de source de documents, ect.</p>
+		<p>En conséquence, j’ai effectué deux fichiers dont l’un est fichier xqm (findDocument.xqm) qui aider à trouver des informations, et l’autre est fichier xql (recherche.xql) qui serve à chercher des informations et en même temps pour envoyer des résultats sur la page et recevoir les demandes de l’utilisateur. </p>
+		<p>Pour l'interface de la présentation, j'ai effectué trois fichiers xml, un pour la présentation du projet, un pour le fonctionnement de la page recherche et l'autre pour les difficultés rencontrés en y joignant une grammaire RelaxNG (presentation.rng). </p>
+		<p>L'interface de la visualisation est pour l’objectif de présenter les textes que l’on a traités. Je les ai donc joint un fichier xsl (visualisation.xsl) pour qu’ils soient bien organisés.</p>
+		</div>
+        <div>
+		</div>
+        <div>
+		<h>Autres liens : </h>
+		<link>
+			<l>recherche.xml</l>
+			<name>Fonctionnement du Recherche</name>
+		</link>
+		<link>
+			<l>difficulte.xml</l>
+			<name>Difficultés rencontrés</name>
+		</link>
+		</div>
+
+	</contents>
+</root>

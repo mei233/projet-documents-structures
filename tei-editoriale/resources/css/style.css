@@ -1,0 +1,22 @@
+/* Application styles could go here */
+footer .poweredby { float: right; margin: 33px 10px 0 0;}
+footer .poweredby img { width: 120px; }
+
+.button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button1{
+    background-color: Gray;
+    border-radius: 8px;}
+    
+input[type=year]{
+    width:15%;
+}
